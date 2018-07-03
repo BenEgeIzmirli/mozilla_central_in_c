@@ -1,0 +1,59 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+toolbar {
+  min-width: 1px;
+  min-height: 20px;
+  -moz-appearance: toolbar;
+}
+
+menubar:-moz-lwtheme,
+toolbar:-moz-lwtheme {
+  -moz-appearance: none;
+  background: none;
+  border-color: transparent;
+}
+
+menubar {
+  -moz-appearance: dialog; /* For content menubars, "toolbar" is too dark, so we use "dialog". */
+  min-width: 1px;
+}
+
+toolbarseparator {
+  -moz-appearance: none;
+  margin: 3px 4px;
+  background-color: ThreeDShadow;
+  padding: 0;
+  width: 1px !important;
+}
+
+/* ::::: toolbarpaletteitem ::::: */
+
+toolbarpaletteitem {
+  cursor: grab;
+}
+
+toolbarspacer {
+  min-width: 24px !important;
+}
+
+/* ..... drag and drop feedback ..... */
+
+toolbarpaletteitem[place="toolbar"] {
+  margin-left: -2px;
+  margin-right: -2px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+toolbarpaletteitem[dragover="left"] {
+  border-left-color: #000000;
+}
+
+toolbarpaletteitem[dragover="right"] {
+  border-right-color: #000000;
+}
+

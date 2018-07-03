@@ -1,0 +1,12 @@
+# Enable code coverage
+ac_add_options --enable-coverage
+export CFLAGS="--coverage"
+export CXXFLAGS="--coverage"
+export LDFLAGS="--coverage -lgcov"
+
+# Needed for e10s:
+# Without debug mode, content processes terminate with "_exit", which doesn't update coverage counters.
+ac_add_options --enable-debug
+# With the sandbox, content processes can't write updated coverage counters in the gcda files.
+ac_add_options --disable-sandbox
+ac_add_options --disable-optimize
